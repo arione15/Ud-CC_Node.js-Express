@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
-<h1>La liste des films cultes !!</h1>
+    <div class="central">
+    <%- include('./partials/header'); %>
+
+<h1><%= title %></h1>
 <div>
-    Youuuuuuuuuuuuuuupiiiiii !!!
+    <% for(movie of movies){ %>
+        <div>Titre : <%= movie.title %></div>
+        <div>Années : <%= movie.year %></div>
+    <% } %>
 </div>
-    
+</div>
+<%- include('./partials/footer'); %>
 </body>
 </html>

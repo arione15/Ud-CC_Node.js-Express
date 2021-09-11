@@ -12,4 +12,4 @@
 4- onfigurer ejs avec app.set pour views et view engine
 
 ## Points à retenir
-1- 
+1- boucle for dans ejs

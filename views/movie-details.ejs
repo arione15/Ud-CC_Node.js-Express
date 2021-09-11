@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
+    <div class="central">
+    <%- include('./partials/header'); %>
+
 <h1>Les détails du film <%= movieId %> : <%= movietitle %></h1>
 <div>
     Le film <%= movietitle %> est vraiment Waaaaaaaaaaaaaaaaaaaaaou  !!!
 </div>
-    
+</div>
+<%- include('./partials/footer'); %>
 </body>
 </html>
