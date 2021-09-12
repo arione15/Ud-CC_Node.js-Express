@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Express</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <div class="central">
+    <%- include('./partials/header'); %>
+
+<h1><%= title %></h1>
+<div>
+    <% for(movie of movies){ %>
+        <div>Titre : <%= movie.title %></div>
+        <div>Années : <%= movie.year %></div>
+    <% } %>
+</div>
+</div>
+<%- include('./partials/footer'); %>
+
+<form action="/"></form></body>
+</html>
