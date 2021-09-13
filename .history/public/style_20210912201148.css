@@ -1,0 +1,19 @@
+body {
+    font-family:Consolas,Monaco,"Andale Mono",monospace;
+}
+
+.central {
+    min-height: 250px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}

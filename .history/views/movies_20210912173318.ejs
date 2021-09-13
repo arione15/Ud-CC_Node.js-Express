@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Express</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+
+<body>
+        <%- include ./partials/header %>
+        <div class="central">
+
+        <h1><%= title %></h1>
+        <div>
+            <% for(movie of movies) {%>
+            <div>Titre : <%= movie.title %></div>
+            <div>Années : <%= movie.year %></div>
+            <% } %>
+        </div>
+        <br>
+        <div>
+            <form action="/movies" method="post">
+                <label for="movieTitle">Titre :</label>
+                <input type="text" id="movieTitle" name="movieTitle">
+
+                <label for="movieYear">Année :</label>
+                <input type="text" id="movieYear" name="movieYear">
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+    <%- partial('./partials/footer') %>
+
+</body>
+
+</html>
