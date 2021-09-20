@@ -93,7 +93,7 @@ app.get("/movie-search", (req, res) => {
 
 // route pour login : get et post (pour post on utilisera urlencodedParser)
 app.get("/login", (req, res) => {
-  res.render("login", { title: "Espace membre" });
+  res.render("login", { title: "Espace membres" });
 });
 
 const fakeuser = { email: "fakeuser@fakeemail.fr", password: "qsd" };

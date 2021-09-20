@@ -1,7 +1,7 @@
 <hr>
 <p> Copyright &copy; 2017 Codeconcept</p>
 <script>
-    // equivalent to $(document).ready()
+    // equivalent to $(document).re()
     // http://stackoverflow.com/questions/2304941/what-is-the-non-jquery-equivalent-of-document-ready
     (function(exports, d) {
         function domReady(fn, context) {
@@ -27,9 +27,9 @@
 
     domReady(function() {
         console.log('DOM is ready :)');
- 
+        
         var connectionLinkArea = document.querySelector('#connectionLink');
-        testUserStatus(); // fonction dans le footer donc elle sera appelée chaque fois que la page est chargée
+        testUserStatus();
 
         function testUserStatus() {
             if(localStorage.getItem('token')) {
@@ -40,11 +40,11 @@
         }
 
         function displayLoggedInView() {
-            connectionLinkArea.innerHTML = '<a href="/login">Déconnexion</a>';
+            connectionLinkArea.innerHTML = '<a href="/login">déconnexion</a>';
         }
 
         function displayLoggedOutView() {
-            connectionLinkArea.innerHTML = '<a href="/login">Connexion</a>';            
+            connectionLinkArea.innerHTML = '<a href="/login">connexion</a>';            
         }
 
     });

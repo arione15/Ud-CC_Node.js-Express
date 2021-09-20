@@ -80,15 +80,7 @@
             xhr.send(payLoad);
         };
 
-        function handleFormDisplay() { 
-            var tokenFromStorage = localStorage.getItem('token');            
-            console.log('handleFormDisplay tokenFromStorage', tokenFromStorage);   
-            if(tokenFromStorage) {
-                switchToLoggedinMode();                     
-            } else {
-                switchToLoggedOutMode();
-            }
-        }
+
 
         function switchToLoggedInMode() {
             loginArea.style.display = 'none';
@@ -100,6 +92,7 @@
             loginArea.style.display = 'block';
             profileArea.style.display = 'none';
             connectionLinkArea.innerHTML='<a href="/login">Connexion</a>';
+            connectionLinkArea.innerHTML='<a href="/login">Déconnexion</a>';
         };
 
         function disconnect() {

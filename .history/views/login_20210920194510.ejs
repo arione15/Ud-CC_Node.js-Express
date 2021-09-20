@@ -46,8 +46,7 @@
         var profileArea = document.querySelector('#profile');
         var disconnectBtn = document.querySelector('#disconnectBtn');
         disconnectBtn.addEventListener('click', disconnect);
-        var connectionLinkArea = document.querySelector('#connectionLink');
-        handleFormDisplay();
+        var connectionLinkArea = document.querySelector()
 
         function loginUser(event) {
             loginUserWithXHR(event);
@@ -80,26 +79,14 @@
             xhr.send(payLoad);
         };
 
-        function handleFormDisplay() { 
-            var tokenFromStorage = localStorage.getItem('token');            
-            console.log('handleFormDisplay tokenFromStorage', tokenFromStorage);   
-            if(tokenFromStorage) {
-                switchToLoggedinMode();                     
-            } else {
-                switchToLoggedOutMode();
-            }
-        }
-
         function switchToLoggedInMode() {
             loginArea.style.display = 'none';
             profileArea.style.display = 'block';
-            connectionLinkArea.innerHTML='<a href="/login">Déconnexion</a>';
         };
-        
+
         function switchToLoggedOutMode() {
             loginArea.style.display = 'block';
             profileArea.style.display = 'none';
-            connectionLinkArea.innerHTML='<a href="/login">Connexion</a>';
         };
 
         function disconnect() {

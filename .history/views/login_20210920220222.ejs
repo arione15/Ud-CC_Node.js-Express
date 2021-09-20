@@ -81,7 +81,7 @@
         };
 
         function handleFormDisplay() { 
-            var tokenFromStorage = localStorage.getItem('token');            
+            tokenFromStorage = localStorage.getItem('token');            
             console.log('handleFormDisplay tokenFromStorage', tokenFromStorage);   
             if(tokenFromStorage) {
                 switchToLoggedinMode();                     

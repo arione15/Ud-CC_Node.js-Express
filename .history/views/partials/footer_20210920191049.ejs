@@ -27,9 +27,9 @@
 
     domReady(function() {
         console.log('DOM is ready :)');
- 
+        
         var connectionLinkArea = document.querySelector('#connectionLink');
-        testUserStatus(); // fonction dans le footer donc elle sera appelée chaque fois que la page est chargée
+        testUserStatus();
 
         function testUserStatus() {
             if(localStorage.getItem('token')) {
@@ -40,11 +40,11 @@
         }
 
         function displayLoggedInView() {
-            connectionLinkArea.innerHTML = '<a href="/login">Déconnexion</a>';
+            connectionLinkArea.innerHTML = '<a href="/login">déconnexion</a>';
         }
 
         function displayLoggedOutView() {
-            connectionLinkArea.innerHTML = '<a href="/login">Connexion</a>';            
+            connectionLinkArea.innerHTML = '<a href="/login">connexion</a>';            
         }
 
     });

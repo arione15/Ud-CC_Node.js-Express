@@ -47,7 +47,6 @@
         var disconnectBtn = document.querySelector('#disconnectBtn');
         disconnectBtn.addEventListener('click', disconnect);
         var connectionLinkArea = document.querySelector('#connectionLink');
-        handleFormDisplay();
 
         function loginUser(event) {
             loginUserWithXHR(event);
@@ -79,16 +78,6 @@
             var payLoad = "email=" + email + "&" + "password=" + password;
             xhr.send(payLoad);
         };
-
-        function handleFormDisplay() { 
-            var tokenFromStorage = localStorage.getItem('token');            
-            console.log('handleFormDisplay tokenFromStorage', tokenFromStorage);   
-            if(tokenFromStorage) {
-                switchToLoggedinMode();                     
-            } else {
-                switchToLoggedOutMode();
-            }
-        }
 
         function switchToLoggedInMode() {
             loginArea.style.display = 'none';

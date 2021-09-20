@@ -80,16 +80,6 @@
             xhr.send(payLoad);
         };
 
-        function handleFormDisplay() { 
-            var tokenFromStorage = localStorage.getItem('token');            
-            console.log('handleFormDisplay tokenFromStorage', tokenFromStorage);   
-            if(tokenFromStorage) {
-                switchToLoggedinMode();                     
-            } else {
-                switchToLoggedOutMode();
-            }
-        }
-
         function switchToLoggedInMode() {
             loginArea.style.display = 'none';
             profileArea.style.display = 'block';
