@@ -10,7 +10,7 @@ const upload = multer();
 const jwt = require("jsonwebtoken");
 
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config
 
 const PORT = 3000;
 app.listen(PORT, () => {
@@ -97,10 +97,9 @@ app.get("/login", (req, res) => {
 });
 
 const fakeuser = { email: "fakeuser@fakeemail.fr", password: "qsd" };
-const mySecret = process.env.MY_SECRET;
-
+//const mySecret = "machainesupersecrete";
 app.post("/login", urlencodedParser, (req, res) => {
-  //console.log("login post", req.body);
+  console.log("login post", req.body);
   if (!req.body) {
     res.sendStatus(500);
   } else {

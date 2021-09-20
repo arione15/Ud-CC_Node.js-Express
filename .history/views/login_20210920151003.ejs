@@ -54,9 +54,10 @@
 
                 xhr.onreadystatechange = function() { //Call a function when the state changes.
                     if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                        //console.log('xhr : ', xhr);
+                        console.log('xhr : ', xhr);
                         var token = xhr.response;
-                        localStorage.setItem('token :', token);
+                        localStorage.setItem(token);
+
                         form.reset();
                     }
                 }

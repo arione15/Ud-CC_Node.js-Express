@@ -98,9 +98,8 @@ app.get("/login", (req, res) => {
 
 const fakeuser = { email: "fakeuser@fakeemail.fr", password: "qsd" };
 const mySecret = process.env.MY_SECRET;
-
 app.post("/login", urlencodedParser, (req, res) => {
-  //console.log("login post", req.body);
+  console.log("login post", req.body);
   if (!req.body) {
     res.sendStatus(500);
   } else {
