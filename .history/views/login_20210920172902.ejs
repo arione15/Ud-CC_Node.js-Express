@@ -28,7 +28,6 @@
                 <button type="submit">connexion</button>
             </form>
         </div>
-        <br>
         <div id="profile" style="display:none">
             <button id="disconnectBtn">Déconnexion</button>
         </div>
@@ -42,9 +41,9 @@
         form.addEventListener("submit", loginUser);
 
         var loginArea = document.querySelector('#login');
-        var profileArea = document.querySelector('#profile');
+        var profileArea = document.querySelector('#'profil);
         var disconnectBtn = document.querySelector('#disconnectBtn');
-        disconnectBtn.addEventListener('click', disconnect);
+        disconnectBtn.addEventListener('click', disconnect);      
 
         function loginUser(event) {
             loginUserWithXHR(event);
@@ -64,9 +63,8 @@
             xhr.onreadystatechange = function () { //Call a function when the state changes.
                 if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                     //console.log('xhr : ', xhr);
-                    // add token to localStorage
                     var token = xhr.response;
-                    localStorage.setItem('token', token);
+                    localStorage.setItem('token :', token);
                     switchToLoggedInMode(); //fonction qui cache et montre des éléments
                     form.reset();
                 }
@@ -75,22 +73,22 @@
             var password = document.getElementById('password').value;
             var payLoad = "email=" + email + "&" + "password=" + password;
             xhr.send(payLoad);
-        };
+        }
 
-        function switchToLoggedInMode() {
-            loginArea.style.display = 'none';
-            profileArea.style.display = 'block';
-        };
-
-        function switchToLoggedOutMode() {
-            loginArea.style.display = 'block';
-            profileArea.style.display = 'none';
-        };
-
-        function disconnect() {
+        function switchToLoggedInMode(){
+            loginArea.style.display='none';
+            profileArea.style.display='block';
+        }
+        function switchToLoggedOutMode(){
+            loginArea.style.display='block';
+            profileArea.style.display='none';
+        }
+        
+        function disconnect(){
             switchToLoggedOutMode();
             localStorage.removeItem('token');
-        };
+        }
+
     </script>
 </body>
 

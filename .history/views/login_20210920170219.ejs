@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Express</title>
+    <link rel="stylesheet" href="../public/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+</head>
+
+<body>
+    <%- include('./partials/header'); %>
+
+        <div class="central">
+            <h1>
+                <%= title %>
+            </h1>
+            <br>
+            <div id="login">
+                <form>
+                    <legend>Veuillez saisir vos identifiants</legend>
+                    <label for="email">email</label>
+                    <input type="text" name="email" id="email">
+                    <label for="password">mot de passe</label>
+                    <input type="password" name="password" id="password">
+                    <button type="submit">connexion</button>
+                </form>
+            </div>
+            <div id="profile">
+                <button id="logout">Déconnexion</button>
+            </div>
+        </div>
+
+        <footer>
+            <%- include('./partials/footer'); %>
+        </footer>
+        <script>
+            var form = document.querySelector('form');
+            form.addEventListener("submit", loginUser);
+
+            var divForm = document.querySelector('')
+
+            function loginUser(event) {
+                loginUserWithXHR(event);
+            }
+
+            function loginUserWithXHR(event) {
+                event.preventDefault();
+                console.log('loginUserWithXHR');
+
+                // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", '/login', true);
+
+                //Send the proper header information along with the request
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = function() { //Call a function when the state changes.
+                    if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                        //console.log('xhr : ', xhr);
+                        var token = xhr.response;
+                        localStorage.setItem('token :', token);
+                        form.reset();
+                    }
+                }
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                var payLoad = "email=" + email + "&" + "password=" + password;
+                xhr.send(payLoad);
+            }
+        </script>
+</body>
+
+</html>
