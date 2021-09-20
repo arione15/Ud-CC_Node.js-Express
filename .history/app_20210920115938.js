@@ -102,11 +102,11 @@ if(!req.body){
 res.json({
     emai: 'fakeuser@fakeemail.fr',
     favoriteMovie: 'Mission impossible',
-    favoriteMovieTheater: 'Ciné TNB, 1 rue Saint-Hélier, 35040 Rennes',
-    lastLoginDate: new Date()
-});
+    last
+})
     } else {
         res.sendStatus(401);
     }
 }
-});
+
+})

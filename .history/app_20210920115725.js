@@ -99,14 +99,8 @@ if(!req.body){
     res.sendStatus(500);
 }else{
     if(req.body.email === fakeuser.email && req.body.password === fakeuser.password){
-res.json({
-    emai: 'fakeuser@fakeemail.fr',
-    favoriteMovie: 'Mission impossible',
-    favoriteMovieTheater: 'Ciné TNB, 1 rue Saint-Hélier, 35040 Rennes',
-    lastLoginDate: new Date()
-});
-    } else {
-        res.sendStatus(401);
+        
     }
 }
-});
+
+})
