@@ -12,12 +12,6 @@ const jwt = require("jsonwebtoken");
 const dotenv = require('dotenv');
 dotenv.config();
 
-// to verify token on the request header
-const expressJwt = require('express-jwt'); 
-const mySecret = process.env.MY_SECRET;
-// check token on all pages except the ones mentioned in unless()
-app.use(expressJwt({ secret: mySecret, algorithms: ['RS256']}).unless({ path: ['/login'] }));
-
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
@@ -28,6 +22,7 @@ let frenchMovies = [];
 app.use("/public", express.static("public")); // pour le fichier style.css
 app.set("views", "./views"); // renseigner le dossier des views
 app.set("view engine", "ejs"); // ca permet d'éviter de rajouter l'extension au nom de template dans les routes
+const mySecret = process.env.MY_SECRET;
 
 // parse application/x-www-form-urlencoded
 //app.use(bodyParser.urlencoded({ extended: false }))

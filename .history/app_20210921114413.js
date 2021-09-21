@@ -9,14 +9,13 @@ const upload = multer();
 
 const jwt = require("jsonwebtoken");
 
+// to verify token on the request header
+const mySecret = process.env.MY_SECRET;
+const expressJwt = require('express-jwt'); 
+
+
 const dotenv = require('dotenv');
 dotenv.config();
-
-// to verify token on the request header
-const expressJwt = require('express-jwt'); 
-const mySecret = process.env.MY_SECRET;
-// check token on all pages except the ones mentioned in unless()
-app.use(expressJwt({ secret: mySecret, algorithms: ['RS256']}).unless({ path: ['/login'] }));
 
 const PORT = 3000;
 app.listen(PORT, () => {
