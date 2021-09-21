@@ -110,11 +110,10 @@
 
         function displayPayload() {
             var payload = parseJwt();
-            console.log(payload);
             var decodedPayloadDiv = document.querySelector('#decoded-payload');
             decodedPayloadDiv.innerHTML = '<pre>' + JSON.stringify(payload) + '</pre>';
         }
-
+        
         function parseJwt () { 
             tokenFromStorage = localStorage.getItem('token');            
             console.log('parseJwt tokenFromStorage', tokenFromStorage);
@@ -125,6 +124,7 @@
                 return 'no token to parse';
             }          
         };
+
 
         function disconnect() {
             switchToLoggedOutMode();

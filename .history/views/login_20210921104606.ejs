@@ -32,8 +32,8 @@
         <br>
         <div id="profile" style="display:none">
             <button id="disconnectBtn">Déconnexion</button>
-            <button id="display-payload">Afficher le payload</button>
-            <div id="decoded-payload"></div>
+            <button id="display-payload">Voir le payload</button>
+            <button id="disconnectBtn">Déconnexion</button>
         </div>
     </div>
 
@@ -46,10 +46,6 @@
 
         var loginArea = document.querySelector('#login');
         var profileArea = document.querySelector('#profile');
-
-        var displayPayloadBtn = document.querySelector('#display-payload');
-        displayPayloadBtn.addEventListener('click', displayPayload);
-
         var disconnectBtn = document.querySelector('#disconnectBtn');
         disconnectBtn.addEventListener('click', disconnect);
         var connectionLinkArea = document.querySelector('#connectionLink');
@@ -108,13 +104,6 @@
             connectionLinkArea.innerHTML='<a href="/login">Connexion</a>';
         };
 
-        function displayPayload() {
-            var payload = parseJwt();
-            console.log(payload);
-            var decodedPayloadDiv = document.querySelector('#decoded-payload');
-            decodedPayloadDiv.innerHTML = '<pre>' + JSON.stringify(payload) + '</pre>';
-        }
-
         function parseJwt () { 
             tokenFromStorage = localStorage.getItem('token');            
             console.log('parseJwt tokenFromStorage', tokenFromStorage);
@@ -125,6 +114,7 @@
                 return 'no token to parse';
             }          
         };
+
 
         function disconnect() {
             switchToLoggedOutMode();

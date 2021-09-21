@@ -110,9 +110,9 @@
 
         function displayPayload() {
             var payload = parseJwt();
-            console.log(payload);
+            console.log()
             var decodedPayloadDiv = document.querySelector('#decoded-payload');
-            decodedPayloadDiv.innerHTML = '<pre>' + JSON.stringify(payload) + '</pre>';
+            decodedPayloadDiv.innerHTML = '<pre>' + payload + '</pre>';
         }
 
         function parseJwt () { 
