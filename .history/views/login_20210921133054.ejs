@@ -58,9 +58,7 @@
         var connectionLinkArea = document.querySelector('#connectionLink');
         handleFormDisplay();
 
-        var memberOnlyLink = document.querySelector('#member-only');
-        memberOnlyLink.addEventListener('click', makeRequestWithToken);
-
+        
         function loginUser(event) {
             loginUserWithXHR(event);
         }

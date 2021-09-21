@@ -16,7 +16,7 @@ dotenv.config();
 const expressJwt = require('express-jwt'); 
 const mySecret = process.env.MY_SECRET;
 // check token on all pages except the ones mentioned in unless()
-app.use(expressJwt({ secret: mySecret, algorithms: ['RS256']}).unless({ path: ['/', '/movies', '/movie-search', '/login']}));
+app.use(expressJwt({ secret: mySecret, algorithms: ['RS256']}).unless({ path: ['/login'] }));
 
 const PORT = 3000;
 app.listen(PORT, () => {
@@ -131,5 +131,4 @@ app.post("/login", urlencodedParser, (req, res) => {
 
 app.get('/member-only', (req, res) => {
   console.log('req.user', req.user);
-  res.send(req.user);
-});
+  

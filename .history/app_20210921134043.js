@@ -128,7 +128,6 @@ app.post("/login", urlencodedParser, (req, res) => {
     }
   }
 });
-
 app.get('/member-only', (req, res) => {
   console.log('req.user', req.user);
   res.send(req.user);

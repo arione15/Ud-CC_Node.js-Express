@@ -36,6 +36,7 @@
             <div id="decoded-payload"></div>
             <div>
                 <a href="#" id="member-only">Espace membre</a>
+                <div id="member-data"></div>
             </div>
         </div>
     </div>
@@ -57,9 +58,6 @@
         disconnectBtn.addEventListener('click', disconnect);
         var connectionLinkArea = document.querySelector('#connectionLink');
         handleFormDisplay();
-
-        var memberOnlyLink = document.querySelector('#member-only');
-        memberOnlyLink.addEventListener('click', makeRequestWithToken);
 
         function loginUser(event) {
             loginUserWithXHR(event);
